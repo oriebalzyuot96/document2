@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title>FAQ</title>
+
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="shortcut icon" href="https://penguinin.com/wp-content/uploads/2018/07/fav3.png">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+    crossorigin="anonymous" />
+  
+  
+    
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark  border-bottom fixed-top py-2" style="z-index: 1031;background-color: black;">
+        <a class="navbar-brand" href="index.html">
+          <img class="logo-icon mr-2" src="https://penguinin.com/penguinin.com/wp-content/uploads/2018/05/logo.png" alt="logo" style="width: 150px;">
+    
+    
+    
+          <span class="logo-text  d-none d-md-inline">Penguin<span class="text-alt" style="color:orange">IN</span>
+            Developer</span></a>
+        
+      </nav>
+    
+      <div class="container-fluid mb-4">
+
+    <h1 id="faq" style="font-weight: bold; border-color: black;">FAQ</h1>
+    <p>In this section, FAQ are presented. For some questions, the answer differs for Android solution.
+        <br>
+        <br>
+    </p>
+    <h2 id="faq--technical-features" class="custom-header">FAQ – Technical Features</h2>
+    <h3 id="what-does-the-penguinins-sdk-include" style="margin-top: 10px;">What does the PenguinIN’s SDK include?</h3>
+    <p>PenguinIN shares</p>
+    <ul>
+        <li><strong>Native library file (.aar for Android or .framework for iOS)</strong></li>
+        <li><strong>Sample project</strong></li>
+        <li><strong>SDK documentation</strong></li>
+    </ul>
+    <h3 id="which-platformsmobile-phones-are-supported">Which platforms/mobile phones are supported?</h3>
+    <p>Penguin’s Mobile SDK supports any smart phones that run</p>
+    <ul>
+        <li><strong><a style="display: inherit;"
+                    href="https://en.wikipedia.org/wiki/Android_version_history#Android_6.0_Marshmallow_(API_23)">Android
+                    v6.0 Marshmallow (API 23)</a> and later</strong></li>
+        <li><strong>iOS 9.0 and later</strong></li>
+    </ul>
+    <h3 id="what-happens-if-a-mobile-phone-does-not-support-ble">What happens if a mobile phone does not support BLE?
+    </h3>
+    <p>We need Bluetooth for indoor positioning. Without Bluetooth, <strong>positioning stops and returns a failure
+            initialization status with a related Error Code.</strong></p>
+    <h3 id="what-happens-if-a-user-does-not-allow-location-permission">What happens if a user does not allow location
+        permission?</h3>
+    <p>We need a location permission for the SDK to calculate the position of the device. Without location permission,
+        <strong>positioning stops and returns a failure initialization status with related Error Code.</strong>
+    </p>
+    <h3 id="does-sdk-work-in-the-background">Does SDK work in the background?</h3>
+    <p>Yes, Penguin’s Mobile SDK works in the background. This useful feature can be configured. Android and iOS show
+        different behavior when running in background. They may also show various OS limitations. For your specific use
+        case, please discuss with PenguinIN support.
+        <br>
+        <br>
+    </p>
+    <h2 id="faq--data-internet-usage" class="custom-header">FAQ – Data/ Internet Usage</h2>
+    <h3 id="what-happens-when-a-user-loses-internet-connection"  style="margin-top: 10px;">What happens when a user loses internet connection?</h3>
+    <p>All main components of PenguinIN’s Mobile SDK, such as loading data or positioning, need a connection to the
+        hosting server.</p>
+    <p>If the server is located on a local domain, the user must be connected to this local network and there is no need
+        for internet connection of their device.</p>
+    <p>If the server hosts on an online domain, the SDK stops calculating the position and returns a connectivity
+        disconnection status when the user loses internet connectivity.</p>
+    <h3 id="which-data-is-collected">Which data is collected?</h3>
+    <p>SDK uploads several types of data to the PenguinIN Cloud. This data includes:</p>
+    <ul>
+        <li><strong>Device position (coordinates and timestamp)</strong></li>
+        <li><strong>SDK Analytics information</strong></li>
+        <li><strong>Crash logging (Advance Crash analytics feature)</strong></li>
+    </ul>
+    <h3 id="which-data-does-the-sdk-store-on-the-device">Which data does the SDK store on the device?</h3>
+    <p>The Mobile SDK uses device storage to improve performance and keep the communication over the network interface
+        to a minimum. The stored data</p>
+    <p>includes:</p>
+    <ul>
+        <li><strong>Venues main data</strong></li>
+        <li><strong>Floors main data and settings</strong></li>
+        <li><strong>Routes (Edges) data</strong>
+            <br>
+            <br>
+        </li>
+    </ul>
+    <h2 id="faq--permissions" class="custom-header">FAQ – Permissions</h2>
+    <h3 id="do-users-need-to-allow-permissions"  style="margin-top: 10px;">Do users need to allow permissions?</h3>
+    <p>Various functionalities like BLE, sensor, and background location only work when the user allows the needed
+        permissions.</p>
+    <h3 id="which-permissions-are-required">Which permissions are required?</h3>
+    <p><strong>Android</strong></p>
+    <ul>
+        <li><strong>Location permissions.</strong></li>
+        <li><strong>Bluetooth permissions.</strong></li>
+        <li><strong>Internet &amp; Network permissions.</strong></li>
+        <li><strong>Storage Permissions.</strong></li>
+    </ul>
+    <p><strong>iOS</strong></p>
+    <ul>
+        <li><strong>Location permissions.</strong></li>
+        <li><strong>Bluetooth permissions.</strong>
+            <br>
+            <br>
+        </li>
+    </ul>
+    <h2 id="faq--dependencies" class="custom-header">FAQ – Dependencies</h2>
+    <h3 id="what-are-the-framework-dependencies-of-the-sdk"  style="margin-top: 10px;">What are the framework dependencies of the SDK?</h3>
+    <p>Penguin’s Mobile SDK needs the following dependencies:</p>
+    <p><strong>Android</strong></p>
+    <ul>
+        <li><strong>(service) com.google.android.gms:play-services-gcm</strong></li>
+        <li><strong>(service) com.google.code.gson:gson</strong></li>
+        <li><strong>(service) com.android.volley:volley</strong></li>
+    </ul>
+    <p><strong>iOS</strong></p>
+    <ul>
+        <li><strong>CoreLocation.framework</strong></li>
+        <li><strong>CoreBluetooth.framework</strong></li>
+        <li><strong>CoreMotion.framework</strong></li>
+        <li><strong>Foundation.framework</strong></li>
+        <li><strong>SystemConfiguration.framework</strong></li>
+        <li><strong>UIKit.framework</strong>
+            <br>
+            <br>
+        </li>
+    </ul>
+  
+<p>For any questions and comments,please send us a message to <strong><a href="mailto:support@penguinin.com" style="display: inherit;">support@penguinin.com</a></strong></p>
+</div>
+
+
+<footer class="footer-wrapper pb-5" style="padding:40px ">
+    <p class="text-center">
+      7700 Irvine Center Drive Irvine CA 92618, USA
+    </p>
+    <div class="footer-social-icons d-flex justify-content-center my-4">
+      <a href="https://www.linkedin.com/company/penguinin/" target="_blank" style="color: white;">
+        <svg class="svg-inline--fa fa-linkedin-in fa-w-14" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin-in" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg><!-- <i class="fab fa-linkedin-in"></i> Font Awesome fontawesome.com -->
+      </a>
+      <a href="https://www.youtube.com/channel/UCKKwXDxzrCHxaJw1jz5GT0g?view_as=subscriber" target="_blank" style="color: white;">
+        <svg class="svg-inline--fa fa-youtube fa-w-18" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="youtube" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg><!-- <i class="fab fa-youtube"></i> Font Awesome fontawesome.com -->
+      </a>
+    </div>
+    <div class="row">
+      <div class="col d-none d-md-block"></div>
+      <div class="col">
+        <ul>
+          <li>RESOURCES</li>
+          <li>
+            <a href="android.html" target="_blank" style="color: white;">Android SDK</a>
+          </li>
+          <li>
+            <a href="iOS.html" target="_blank" style="color: white;">iOS SDK</a>
+          </li>
+  
+        </ul>
+      </div>
+      <div class="col">
+        <ul>
+          <li>SUPPORT</li>
+  
+          <li>
+            <a href="https://penguinin.com/contact-us/" target="_blank" style="color: white;">Contact us</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col">
+        <ul>
+          <li>ABOUT PenguinIN</li>
+          <li>
+            <a href="https://penguinin.com/about-us/" target="_blank" style="color: white;">PenguinIN Website</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col d-none d-md-block"></div>
+    </div>
+  
+  </footer>
+
+
+</body>
+
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+<script src="https://use.fontawesome.com/releases/v5.15.2/js/all.js"></script>
+
+
+</html>

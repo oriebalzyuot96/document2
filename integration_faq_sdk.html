@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<link rel="shortcut icon" href="https://penguinin.com/wp-content/uploads/2018/07/fav3.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+  integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+  crossorigin="anonymous" />
+
+
+  
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+  
+  <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+
+
+
+<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+
+<head>
+  <title>PenguinIN SDK</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark  border-bottom fixed-top py-2" style="z-index: 1031;background-color: black;">
+    <a class="navbar-brand" href="index.html">
+      <img class="logo-icon mr-2" src="https://penguinin.com/penguinin.com/wp-content/uploads/2018/05/logo.png" alt="logo" style="width: 150px;">
+
+
+
+      <span class="logo-text  d-none d-md-inline">Penguin<span class="text-alt" style="color:orange">IN</span>
+        Developer</span></a>
+    
+  </nav>
+
+
+
+  <div class="container-fluid mb-4">
+
+  <h1 id="integration-and-sdk---v400" style="font-weight: bold; border-color: black;">Integration and SDK - v4.2.1</h1>
+  <p><a href="#scope" style="text-align: left;font-weight: bold;">1 Scope </a></p>
+  <p><a href="#glossary" style="text-align: left;font-weight: bold;">2 Glossary</a></p>
+  <p><a href="#before-beginning" style="text-align: left;font-weight: bold;">3 Before Beginning</a></p>
+  <br>
+  <h1 id="scope" class="custom-header">Scope</h1>
+  <p>In this section of the documentation we describe how to create the conditions required to start developing and
+    integrating the SDK.</p>
+  <br>
+
+  <h1 id="glossary" class="custom-header mb-4">Glossary</h1>
+  
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align:left">Term</th>
+        <th>Meaning</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align:left">IDE</td>
+        <td>Acronym for Integrated Development Environment.</td>
+      </tr>
+      <tr>
+        <td style="text-align:left">Android Studio</td>
+        <td>Android app development IDE.</td>
+      </tr>
+      <tr>
+        <td style="text-align:left">Beacon</td>
+        <td>BLE sensor device that sends data packets.</td>
+      </tr>
+      <tr>
+        <td style="text-align:left">BLE</td>
+        <td>Acronym for Bluetooth Low Energy. BLE is a wireless personal area network technology designed and
+          marketed by the Bluetooth Special Interest Group aimed at novel applications in the healthcare,
+          fitness, beacons, security, and home entertainment industries.</td>
+      </tr>
+      <tr>
+        <td style="text-align:left">CMS</td>
+        <td>Acronym for Content Management System.</td>
+      </tr>
+      <tr>
+        <td style="text-align:left">GPS</td>
+        <td>Acronym for Global Positioning System.</td>
+      </tr>
+      <tr>
+        <td style="text-align:left">Heading</td>
+        <td>Synonym of ‘Orientation’.</td>
+      </tr>
+      <tr>
+        <td style="text-align:left">Host app</td>
+        <td>Application hosting PenguinIN’s SDK.</td>
+      </tr>
+      <tr>
+        <td style="text-align:left">JSON</td>
+        <td>A data exchange format, Acronym for JavaScript Object Notation.</td>
+      </tr>
+      <tr>
+        <td style="text-align:left">Orientation</td>
+        <td>The direction where the mobile is heading.</td>
+      </tr>
+      <tr>
+        <td style="text-align:left">OS</td>
+        <td>Acronym for Operating System.</td>
+      </tr>
+      <tr>
+        <td style="text-align:left">UI</td>
+        <td>Acronym for User Interface.</td>
+      </tr>
+      <tr>
+        <td style="text-align:left">Wi-Fi</td>
+        <td>Technology that uses radio waves to provide network connectivity.</td>
+      </tr>
+      <tr>
+        <td style="text-align:left">X-coordinate</td>
+        <td>Horizontal coordinate in a grid.</td>
+      </tr>
+      <tr>
+        <td style="text-align:left">Y-coordinate</td>
+        <td>Vertical coordinate in a grid.</td>
+      </tr>
+      <tr>
+        <td style="text-align:left">Z-coordinate</td>
+        <td>Height.</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <br>
+  <h1 id="before-beginning" class="custom-header">Before Beginning</h1>
+  
+  <p>The application developer receives  SDK and a companion sample app which integrates the SDK and
+    shows additional basic functionality including presenting location on map and navigation. However, in order for
+    the sample app to return positions, there must be a BLE beacon present and configured correctly with the parameters in
+    the table below:</p>
+    <br>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align:left">Paramter</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align:left">Protocol</td>
+        <td>iBeacon</td>
+      </tr>
+      <tr>
+        <td style="text-align:left">UUID</td>
+        <td>A2C56DB5-DFFB-48D2-B060-D0F5A71096E0</td>
+      </tr>
+      <tr>
+        <td style="text-align:left">Major</td>
+        <td>500</td>
+      </tr>
+      <tr>
+        <td style="text-align:left">Minor</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td style="text-align:left">Tx Power</td>
+        <td>-65</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <p>In the likely event that the application developer does not have a physical beacon, then one of many simulator
+    beacon tools can be used. Below is an example of such a tool and the steps used to configure this tool with the
+    above parameters.</p>
+  <ul>
+    <li>
+      <p>Download the following app from the Android play store (Apple alternatives exist):
+        <br>
+        <span class="imgsdk2-container">
+
+          <img class="imgsdk2" src="./img/BeaconSimulator.png" alt="" style="margin-top: 15px;">
+        </span>
+        <br>
+      </p>
+        <li>Add new simulated beacon:
+          <div class="containersdk">
+            <span style="display:inline-block">
+              <img src="./img/BeaconSimulator1.png" alt="" style="width: 80%;">
+            </span>
+            <span style="display:inline-block">
+              <img src="./img/BeaconSimulator2.png" alt="" style="width: 80.5%;">
+            </span><span style="display:inline-block">
+              <img src="./img/BeaconSimulator3.png" alt="" style="width: 82%;"></span>
+          </div>
+        </li>
+    </li>
+  </ul>
+  <br>
+  Now the beacon has been correctly configured, we are ready to move to the next section showing how to leverage the
+  sample app and to configure the SDK.
+  <br>
+
+  <div class="row mt-4 mb-3">
+    <div class="col-sm-6 col-xl-3 d-flex mcb-column one-third column_icon_box empty-col ">
+    </div>
+    <div class="col-sm-6 col-xl-3 d-flex main-column one-third column_icon_box "  onclick="location.href='android.html';">
+      <div class="animate fadeInUp" data-anim-type="fadeInUp">
+        <div class="icon_box icon_position_top no_border"><a class="" href="android.html">
+            <div class="image_wrapper"><img src="img/android_robot.svg" class="scale-with-grid" alt="map (1)" width="94" height="84"></div>
+            <div class="desc_wrapper">
+              <h3 class="tittle_button">Android</h3>
+
+            </div>
+          </a></div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-xl-3 d-flex main-column one-third column_icon_box" onclick="location.href='ios.html';" >
+      <div class="animate fadeInUp" data-anim-type="fadeInUp">
+        <div class="icon_box icon_position_top no_border"><a class="" href="ios.html" >
+            <div class="image_wrapper"><img src="img/apple_symbol.svg" class="scale-with-grid" alt="indoor-way-icon" width="50" height="81"></div>
+            <div class="desc_wrapper">
+              <h3 class="tittle_button">iOS</h3>
+
+            </div>
+          </a></div>
+      </div>
+    </div>
+
+
+    <div class="col-sm-6 col-xl-3 d-flex mcb-column one-third column_icon_box empty-col ">
+    </div>
+    
+  </div>
+  <p>If you have a question, please check our <a href="faq.html" class="fqalink">FAQ page</a>, or send us a message to <strong><a href="mailto:support@penguinin.com" style="display: inherit;">support@penguinin.com</a></strong></p>
+</div>
+
+<footer class="footer-wrapper" style="padding:40px ">
+  <p class="text-center">
+    7700 Irvine Center Drive Irvine CA 92618, USA
+  </p>
+  <div class="footer-social-icons d-flex justify-content-center my-4">
+    <a href="https://www.linkedin.com/company/penguinin/" target="_blank" style="color: white;">
+      <svg class="svg-inline--fa fa-linkedin-in fa-w-14" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin-in" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg><!-- <i class="fab fa-linkedin-in"></i> Font Awesome fontawesome.com -->
+    </a>
+    <a href="https://www.youtube.com/channel/UCKKwXDxzrCHxaJw1jz5GT0g?view_as=subscriber" target="_blank" style="color: white;">
+      <svg class="svg-inline--fa fa-youtube fa-w-18" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="youtube" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg><!-- <i class="fab fa-youtube"></i> Font Awesome fontawesome.com -->
+    </a>
+  </div>
+  <div class="row">
+    <div class="col d-none d-md-block"></div>
+    <div class="col">
+      <ul>
+        <li>RESOURCES</li>
+        <li>
+          <a href="android.html" target="_blank" style="color: white;">Android SDK</a>
+        </li>
+        <li>
+          <a href="iOS.html" target="_blank" style="color: white;">iOS SDK</a>
+        </li>
+
+      </ul>
+    </div>
+    <div class="col">
+      <ul>
+        <li>SUPPORT</li>
+
+        <li>
+          <a href="https://penguinin.com/contact-us/" target="_blank" style="color: white;">Contact us</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col">
+      <ul>
+        <li>ABOUT PenguinIN</li>
+        <li>
+          <a href="https://penguinin.com/about-us/" target="_blank" style="color: white;">PenguinIN Website</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col d-none d-md-block"></div>
+  </div>
+
+</footer>
+
+</body>
+
+
+</body>
+
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+<script src="https://use.fontawesome.com/releases/v5.15.2/js/all.js"></script>
+<header class="site-header">
+
+</html>
